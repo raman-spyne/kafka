@@ -11,6 +11,7 @@
   "author": "raman.dwivedi@spyne.ai",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "kafkajs": "^2.2.2"
   }
 }

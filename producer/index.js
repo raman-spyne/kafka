@@ -1,14 +1,17 @@
 const { Kafka } = require("kafkajs");
 const crypto = require("crypto");
+const env = require('dotenv');
+
+// initializing .env file
+env.config();
 
 const server = new Kafka({
-  brokers: ["pkc-n00kk.us-east-1.aws.confluent.cloud:9092"],
+  brokers: process.env.BROKERLIST.split(','),
   ssl: true,
   sasl: {
     mechanism: "plain",
-    username: "6KSCVIWS4VJKBONU",
-    password:
-      "gYTlmC/lkMArJcvW+rBcjd+mD/A78dGEI3u8RMxKciAloGq4zvcz31gPca/DkgR1",
+    username: process.env.USERNAME,
+    password: process.env.PASSWORD
   },
 });
 
